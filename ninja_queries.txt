@@ -1,0 +1,80 @@
+from dojo_ninjas_app.models import *
+
+dojo_one = Dojos.objects.create(name = "Tiger Dojo", city = "New York City", state = "New York")
+
+dojo_two = Dojos.objects.create(name = "Panda Dojo", city = "Dallas", state = "Texas")
+
+dojo_three = Dojos.objects.create(name = "Snake Dojo", city = "Phoenix", state = "AZ")
+
+dojo_to_delete=Dojos.objects.get(id=1)
+
+dojo_to_delete.delete()
+
+dojo_to_delete=Dojos.objects.get(id=2)
+
+dojo_to_delete.delete()
+
+dojo_to_delete=Dojos.objects.get(id=3)
+
+dojo_to_delete.delete()
+
+green_dojo = Dojos.objects.create(name = "Green Dojo", city = "Tulsa", state = "OK")
+
+red_dojo = Dojos.objects.create(name = "Red Dojo", city = "Los Angeles", state = "CA")
+
+blue_dojo = Dojos.objects.create(name = "Blue Dojo", city = "Boston", state = "MA")
+
+this_dojo = Dojos.objects.get(id=4)
+
+ray = Ninjas.objects.create(dojo = this_dojo, first_name = "Ray", last_name = "Spaghetti")
+
+may = Ninjas.objects.create(dojo = this_dojo, first_name = "May", last_name = "Diamond")
+
+natsu = Ninjas.objects.create(dojo = this_dojo, first_name = "Natsu", last_name = "Dragneel")
+
+that_dojo = Dojos.objects.get(id=5)
+
+jake = Ninjas.objects.create(dojo = that_dojo, first_name = "Jake", last_name = "Bakewell")
+
+shiba = Ninjas.objects.create(dojo = that_dojo, first_name = "Shiba", last_name = "Inu")
+
+frodo = Ninjas.objects.create(dojo = that_dojo, first_name = "Frodo", last_name = "Baggins")
+
+that_other_dojo = Dojos.objects.get(id=6)
+
+ash = Ninjas.objects.create(dojo = that_other_dojo, first_name = "Ash", last_name = "Ketchum")
+
+naruto = Ninjas.objects.create(dojo = that_other_dojo, first_name = "Naruto", last_name = "Uzumaki")
+
+sasuke = Ninjas.objects.create(dojo = that_other_dojo, first_name = "Sasuke", last_name = "Uchiha")
+
+green_ninjas = Ninjas.objects.filter(dojo = this_dojo)
+
+print(green_ninjas)
+
+red_ninjas = Ninjas.objects.filter(dojo = that_dojo)
+
+blue_ninjas = Ninjas.objects.filter(dojo = that_other_dojo)
+
+last_ninja = Ninjas.objects.last()
+
+print(last_ninja)
+
+Ninjas object (9)
+
+exit()
+
+python manage.py makemigrations
+
+1
+
+"old dojo"
+
+python manage.py migrate
+
+python manage.py shell
+
+from dojo_ninjas_app.models import *
+
+purple = Dojos.objects.create(name = "Purple Dojo", city = "Minneapolis", state = "MN", desc = "Dojo founded by
+   ...:  a purple guy")
